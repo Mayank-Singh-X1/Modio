@@ -1,0 +1,42 @@
+/* Mario game */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #46add6;
+  overflow-y: hidden; 
+}
+
+.game-container {
+  height: 100vh;
+  width: 3000px;
+  position: relative; 
+}
+
+.modi {
+  position: absolute;
+  bottom: 126px; 
+  left: 50px; 
+}
+
+.modi-img {
+  width: 100px;
+  height: 100px;
+}
+
+.ground {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 130px; 
+  width: 100%; 
+  
+  background-image: url('./media/groundBrick.jpg');
+  background-repeat: repeat-x; 
+  background-size: contain;    
+  image-rendering: pixelated; 
+}
