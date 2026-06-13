@@ -1,42 +1,54 @@
 /* Mario game */
 
-*, *::before, *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background-color: #46add6;
-  overflow-y: hidden; 
+    background-color: #46add6;
+    overflow: hidden;
+    position: relative;
+    
+}
+*::-webkit-scrollbar {
+    display: none;
 }
 
 .game-container {
-  height: 100vh;
-  width: 3000px;
-  position: relative; 
+    height: 100vh;
+    width: 3000px;
+    position: absolute;
+    transition: transform 0.1s ease-out;
 }
 
 .modi {
-  position: absolute;
-  bottom: 126px; 
-  left: 50px; 
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 0;
+    transition: all 0.1s linear;
+    object-fit: contain;
+    object-position: center;
 }
 
 .modi-img {
-  width: 100px;
-  height: 100px;
+    width: 100%;
+    height: 100%;
 }
 
 .ground {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 130px; 
-  width: 100%; 
-  
-  background-image: url('./media/groundBrick.jpg');
-  background-repeat: repeat-x; 
-  background-size: contain;    
-  image-rendering: pixelated; 
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 130px;
+    width: 100%;
+    background-image: url('./media/groundBrick.jpg');
+    background-repeat: repeat-x;
+    background-size: contain;
 }
