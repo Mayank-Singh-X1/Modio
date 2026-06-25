@@ -42,6 +42,27 @@ body {
     height: 100%;
 }
 
+.pipe{
+    position:absolute;
+    height: 140px;
+    width: 130px;
+    background: url('./media/pipe.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    top:460px;
+}
+
+.pipe1{
+    left:500px;
+}
+
+.pipe2{
+left:1000px;
+}
+.pipe3{
+left:1500px;
+}
+
 .ground {
     position: absolute;
     bottom: 0;

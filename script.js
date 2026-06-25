@@ -2,19 +2,20 @@ let modi = document.querySelector('.modi');
 let gameContainer = document.querySelector('.game-container');
 let ground = document.querySelector('.ground');
 
-const groundTop = 535;
+const groundTop = 530;
 
 const player = {
   x: 50,
-  y: 535,
+  y: 530,
   width: 70,
   height: 70,
   speed: 12,
   vy: 0,
-  jump: -15,
-  gravity: 0.4,
+  jump: -14,
+  gravity: 0.5,
   isgrounded: true,
 }
+
 modi.style.width = player.width + 'px';
 modi.style.height = player.height + 'px';
 
@@ -45,7 +46,7 @@ window.addEventListener('keydown', (e) => {
 });
 
 
-setInterval(() => {
+function gameloop() {
 
   if (!player.isgrounded) {
     player.vy += player.gravity;
@@ -63,13 +64,16 @@ setInterval(() => {
   modi.style.top = player.y + 'px';
 
   const halfWidth = window.innerWidth / 2;
-  const scrollLeft = player.x - halfWidth ;
+  let scrollLeft = player.x - halfWidth;
 
   if (scrollLeft < 0) {
-    scrollLeft = '0px';
-  } 
+    scrollLeft = 0;
+  }
 
   gameContainer.style.transform = `translateX(-${scrollLeft}px)`;
-}, 1000/60);
+
+  requestAnimationFrame(gameloop);
+}
+gameloop();
 
 
